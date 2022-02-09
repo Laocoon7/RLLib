@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -16,3 +17,23 @@
   </Target>
 
 </Project>
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\VkSharp\Source\VkSharp\VkSharp.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="E:\VulkanSDK\1.2.198.1\Bin\glslc -fshader-stage=vertex $(ProjectDir)Shaders\VertexShader.glsl -o $(TargetDir)VertexShader.spv&#xD;&#xA;E:\VulkanSDK\1.2.198.1\Bin\glslc -fshader-stage=fragment $(ProjectDir)Shaders\FragmentShader.glsl -o $(TargetDir)FragmentShader.spv" />
+  </Target>
+
+</Project>
+>>>>>>> main
