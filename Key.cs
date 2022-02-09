@@ -489,4 +489,5 @@ public enum Key
     //
     // Summary:
     //     The menu key.
-    Menu = 348
+    Menu = 348,
+}
