@@ -1,6 +1,6 @@
-using Silk.NET.Input;
+﻿using RLLib;
 
-namespace RLLib.Sample;
+namespace SFC;
 internal class Sample : GameWindow
 {
     // Just hard-coded width/height as we normally wouldn't want to change the number of tiles on the screen
