@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="E:\VulkanSDK\1.2.198.1\Bin\glslc -fshader-stage=vertex $(ProjectDir)Shaders\VertexShader.glsl -o $(TargetDir)VertexShader.spv&#xD;&#xA;E:\VulkanSDK\1.2.198.1\Bin\glslc -fshader-stage=fragment $(ProjectDir)Shaders\FragmentShader.glsl -o $(TargetDir)FragmentShader.spv" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Silk.NET" Version="2.13.0" />
+    <PackageReference Include="Silk.NET.Vulkan.Extensions.EXT" Version="2.13.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Vulkan\" />
+    <Folder Include="Vulkan\VulkanInfo\" />
+    <Folder Include="Vulkan\VulkanBuilders\" />
+  </ItemGroup>
+
+</Project>
